@@ -2,7 +2,7 @@ const notes = require("express").Router();
 const { v4: uuidv4 } = require("uuid");
 const fs = require("fs");
 const util = require("util");
-const { json } = require("express");
+
 const readFromFile = util.promisify(fs.readFile);
 
 notes.get("/notes", (req, res) => {
@@ -36,13 +36,11 @@ notes.delete("/notes/:id", (req, res) => {
 });
 
 notes.post("/notes", (req, res) => {
-  console.log(req.body);
-
   const { title, text } = req.body;
 
   if (req.body) {
     const newNote = { title, text, id: uuidv4() };
-    console.log(newNote);
+
     fs.readFile("./db/db.json", "utf8", (err, data) => {
       if (err) {
         console.log(err);
