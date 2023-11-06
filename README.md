@@ -1,4 +1,5 @@
 # Note Taker
+![Screenshot 2023-11-06 152805](https://github.com/ThirstyWombat/Note-Taker/assets/122827259/74796228-72f7-4b6a-8636-06af10cd7ab3)
 
 ## Description
 
